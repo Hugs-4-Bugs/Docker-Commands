@@ -8,7 +8,7 @@ This document contains a list of commonly used Docker commands for development a
 ### Docker Installation
 - Install Docker on your system:
   - **Windows**: [Docker Desktop](https://www.docker.com/products/docker-desktop)
-  - **Linux**: Follow the [installation guide](https://docs.docker.com/engine/install/)
+  - **Linux**: [installation guide](https://docs.docker.com/engine/install/)
   - **macOS**: [Docker Desktop for Mac](https://www.docker.com/products/docker-desktop)
 
 ### Basic Docker Commands
