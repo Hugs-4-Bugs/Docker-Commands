@@ -1,6 +1,4 @@
-Apologies for the confusion earlier! Here's the `README.md` file with all Docker commands in the proper markdown section format:
 
-```markdown
 # Docker Commands Cheat Sheet
 
 This document contains a list of commonly used Docker commands for development and deployment.
@@ -201,6 +199,88 @@ This document contains a list of commonly used Docker commands for development a
   ```bash
   docker build --build-arg <key>=<value> -t <image_name> .
   ```
+
+---
+
+## Additional Commands
+
+### Java JShell Commands
+
+- **Start Java JShell:**
+  ```bash
+  jshell
+  ```
+
+- **Run a Java program from a file:**
+  ```bash
+  jshell <path_to_file>.java
+  ```
+
+- **Exit Java JShell:**
+  ```bash
+  /exit
+  ```
+
+- **Display current variables and methods in JShell:**
+  ```bash
+  /vars
+  /methods
+  ```
+
+### Running Java Code in Docker
+
+- **Create a Dockerfile for Java:**
+  ```dockerfile
+  FROM openjdk:17-jdk-alpine
+  COPY . /app
+  WORKDIR /app
+  RUN javac HelloWorld.java
+  CMD ["java", "HelloWorld"]
+  ```
+
+- **Build a Docker image for a Java program:**
+  ```bash
+  docker build -t java-app .
+  ```
+
+- **Run a Java program in Docker:**
+  ```bash
+  docker run java-app
+  ```
+
+### MySQL Commands
+
+- **Run MySQL Docker container:**
+  ```bash
+  docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=rootpassword -d mysql:latest
+  ```
+
+- **Access MySQL container:**
+  ```bash
+  docker exec -it mysql-container mysql -uroot -p
+  ```
+
+- **Run MySQL query inside container:**
+  ```bash
+  docker exec -it mysql-container mysql -uroot -prootpassword -e "SELECT * FROM mydatabase.mytable;"
+  ```
+
+- **Stop MySQL container:**
+  ```bash
+  docker stop mysql-container
+  ```
+
+- **Remove MySQL container:**
+  ```bash
+  docker rm mysql-container
+  ```
+
+
+
+### Key Additions:
+1. **Java JShell** commands for running Java code interactively.
+2. **Running Java code in Docker** — how to containerize and run a simple Java application.
+3. **MySQL commands** to interact with MySQL containers for database queries.
 
 
 
